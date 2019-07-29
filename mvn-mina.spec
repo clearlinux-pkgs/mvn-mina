@@ -4,14 +4,15 @@
 #
 Name     : mvn-mina
 Version  : 2.0.16
-Release  : 1
+Release  : 2
 URL      : https://github.com/apache/mina/archive/2.0.16.tar.gz
 Source0  : https://github.com/apache/mina/archive/2.0.16.tar.gz
 Source1  : https://repo1.maven.org/maven2/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.jar
 Source2  : https://repo1.maven.org/maven2/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.pom
+Source3  : https://repo1.maven.org/maven2/org/apache/mina/mina-parent/2.0.16/mina-parent-2.0.16.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : Apache-2.0
+License  : Apache-2.0 BSD-3-Clause LGPL-2.1
 Requires: mvn-mina-data = %{version}-%{release}
 
 %description
@@ -36,6 +37,9 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-co
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.16
 cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-parent/2.0.16
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-parent/2.0.16/mina-parent-2.0.16.pom
+
 
 %files
 %defattr(-,root,root,-)
@@ -44,3 +48,4 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-co
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.jar
 /usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.pom
+/usr/share/java/.m2/repository/org/apache/mina/mina-parent/2.0.16/mina-parent-2.0.16.pom
