@@ -4,7 +4,7 @@
 #
 Name     : mvn-mina
 Version  : 2.0.16
-Release  : 2
+Release  : 3
 URL      : https://github.com/apache/mina/archive/2.0.16.tar.gz
 Source0  : https://github.com/apache/mina/archive/2.0.16.tar.gz
 Source1  : https://repo1.maven.org/maven2/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.jar
@@ -12,7 +12,7 @@ Source2  : https://repo1.maven.org/maven2/org/apache/mina/mina-core/2.0.16/mina-
 Source3  : https://repo1.maven.org/maven2/org/apache/mina/mina-parent/2.0.16/mina-parent-2.0.16.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : Apache-2.0 BSD-3-Clause LGPL-2.1
+License  : Apache-2.0 BSD-3-Clause ICU LGPL-2.1
 Requires: mvn-mina-data = %{version}-%{release}
 
 %description
