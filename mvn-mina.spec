@@ -4,21 +4,25 @@
 #
 Name     : mvn-mina
 Version  : 2.0.16
-Release  : 5
+Release  : 6
 URL      : https://github.com/apache/mina/archive/2.0.16.tar.gz
 Source0  : https://github.com/apache/mina/archive/2.0.16.tar.gz
-Source1  : https://repo.maven.apache.org/maven2/org/apache/mina/mina-core/2.0.0-M2/mina-core-2.0.0-M2.jar
-Source2  : https://repo.maven.apache.org/maven2/org/apache/mina/mina-core/2.0.0-M2/mina-core-2.0.0-M2.pom
-Source3  : https://repo.maven.apache.org/maven2/org/apache/mina/mina-core/2.0.0-M4/mina-core-2.0.0-M4.jar
-Source4  : https://repo.maven.apache.org/maven2/org/apache/mina/mina-core/2.0.0-M4/mina-core-2.0.0-M4.pom
-Source5  : https://repo.maven.apache.org/maven2/org/apache/mina/mina-core/2.0.0-M5/mina-core-2.0.0-M5.jar
-Source6  : https://repo.maven.apache.org/maven2/org/apache/mina/mina-core/2.0.0-M5/mina-core-2.0.0-M5.pom
-Source7  : https://repo1.maven.org/maven2/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.jar
-Source8  : https://repo1.maven.org/maven2/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.pom
-Source9  : https://repo1.maven.org/maven2/org/apache/mina/mina-core/2.0.7/mina-core-2.0.7.jar
-Source10  : https://repo1.maven.org/maven2/org/apache/mina/mina-core/2.0.7/mina-core-2.0.7.pom
-Source11  : https://repo1.maven.org/maven2/org/apache/mina/mina-parent/2.0.16/mina-parent-2.0.16.pom
-Source12  : https://repo1.maven.org/maven2/org/apache/mina/mina-parent/2.0.7/mina-parent-2.0.7.pom
+Source1  : https://repo.maven.apache.org/maven2/org/apache/mina/build/2.0.0-M2/build-2.0.0-M2.pom
+Source2  : https://repo.maven.apache.org/maven2/org/apache/mina/build/2.0.0-M4/build-2.0.0-M4.pom
+Source3  : https://repo.maven.apache.org/maven2/org/apache/mina/build/2.0.0-M5/build-2.0.0-M5.pom
+Source4  : https://repo.maven.apache.org/maven2/org/apache/mina/mina-core/2.0.0-M2/mina-core-2.0.0-M2.jar
+Source5  : https://repo.maven.apache.org/maven2/org/apache/mina/mina-core/2.0.0-M2/mina-core-2.0.0-M2.pom
+Source6  : https://repo.maven.apache.org/maven2/org/apache/mina/mina-core/2.0.0-M4/mina-core-2.0.0-M4.jar
+Source7  : https://repo.maven.apache.org/maven2/org/apache/mina/mina-core/2.0.0-M4/mina-core-2.0.0-M4.pom
+Source8  : https://repo.maven.apache.org/maven2/org/apache/mina/mina-core/2.0.0-M5/mina-core-2.0.0-M5.jar
+Source9  : https://repo.maven.apache.org/maven2/org/apache/mina/mina-core/2.0.0-M5/mina-core-2.0.0-M5.pom
+Source10  : https://repo.maven.apache.org/maven2/org/apache/mina/mina-parent/2.0.0-M5/mina-parent-2.0.0-M5.pom
+Source11  : https://repo1.maven.org/maven2/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.jar
+Source12  : https://repo1.maven.org/maven2/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.pom
+Source13  : https://repo1.maven.org/maven2/org/apache/mina/mina-core/2.0.7/mina-core-2.0.7.jar
+Source14  : https://repo1.maven.org/maven2/org/apache/mina/mina-core/2.0.7/mina-core-2.0.7.pom
+Source15  : https://repo1.maven.org/maven2/org/apache/mina/mina-parent/2.0.16/mina-parent-2.0.16.pom
+Source16  : https://repo1.maven.org/maven2/org/apache/mina/mina-parent/2.0.7/mina-parent-2.0.7.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause ICU LGPL-2.1
@@ -51,46 +55,59 @@ license components for the mvn-mina package.
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/mvn-mina
+cp LICENSE.jzlib.txt %{buildroot}/usr/share/package-licenses/mvn-mina/LICENSE.jzlib.txt
 cp LICENSE.ognl.txt %{buildroot}/usr/share/package-licenses/mvn-mina/LICENSE.ognl.txt
 cp LICENSE.slf4j.txt %{buildroot}/usr/share/package-licenses/mvn-mina/LICENSE.slf4j.txt
 cp LICENSE.springframework.txt %{buildroot}/usr/share/package-licenses/mvn-mina/LICENSE.springframework.txt
 cp LICENSE.txt %{buildroot}/usr/share/package-licenses/mvn-mina/LICENSE.txt
 cp mina-transport-serial/LICENSE.rxtx.txt %{buildroot}/usr/share/package-licenses/mvn-mina/mina-transport-serial_LICENSE.rxtx.txt
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M2
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M2/mina-core-2.0.0-M2.jar
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/build/2.0.0-M2
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/build/2.0.0-M2/build-2.0.0-M2.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/build/2.0.0-M4
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/build/2.0.0-M4/build-2.0.0-M4.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/build/2.0.0-M5
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/build/2.0.0-M5/build-2.0.0-M5.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M2
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M2/mina-core-2.0.0-M2.pom
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M2/mina-core-2.0.0-M2.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M2
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M2/mina-core-2.0.0-M2.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M4
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M4/mina-core-2.0.0-M4.jar
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M4/mina-core-2.0.0-M4.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M4
-cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M4/mina-core-2.0.0-M4.pom
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M4/mina-core-2.0.0-M4.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M5
-cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M5/mina-core-2.0.0-M5.jar
+cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M5/mina-core-2.0.0-M5.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M5
-cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M5/mina-core-2.0.0-M5.pom
+cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M5/mina-core-2.0.0-M5.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-parent/2.0.0-M5
+cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-parent/2.0.0-M5/mina-parent-2.0.0-M5.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.16
-cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.jar
+cp %{SOURCE11} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.16
-cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.pom
+cp %{SOURCE12} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.7
-cp %{SOURCE9} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.7/mina-core-2.0.7.jar
+cp %{SOURCE13} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.7/mina-core-2.0.7.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.7
-cp %{SOURCE10} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.7/mina-core-2.0.7.pom
+cp %{SOURCE14} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.7/mina-core-2.0.7.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-parent/2.0.16
-cp %{SOURCE11} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-parent/2.0.16/mina-parent-2.0.16.pom
+cp %{SOURCE15} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-parent/2.0.16/mina-parent-2.0.16.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-parent/2.0.7
-cp %{SOURCE12} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-parent/2.0.7/mina-parent-2.0.7.pom
+cp %{SOURCE16} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-parent/2.0.7/mina-parent-2.0.7.pom
 
 
 %files
@@ -98,6 +115,9 @@ cp %{SOURCE12} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-p
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/org/apache/mina/build/2.0.0-M2/build-2.0.0-M2.pom
+/usr/share/java/.m2/repository/org/apache/mina/build/2.0.0-M4/build-2.0.0-M4.pom
+/usr/share/java/.m2/repository/org/apache/mina/build/2.0.0-M5/build-2.0.0-M5.pom
 /usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M2/mina-core-2.0.0-M2.jar
 /usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M2/mina-core-2.0.0-M2.pom
 /usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.0-M4/mina-core-2.0.0-M4.jar
@@ -108,11 +128,13 @@ cp %{SOURCE12} %{buildroot}/usr/share/java/.m2/repository/org/apache/mina/mina-p
 /usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.16/mina-core-2.0.16.pom
 /usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.7/mina-core-2.0.7.jar
 /usr/share/java/.m2/repository/org/apache/mina/mina-core/2.0.7/mina-core-2.0.7.pom
+/usr/share/java/.m2/repository/org/apache/mina/mina-parent/2.0.0-M5/mina-parent-2.0.0-M5.pom
 /usr/share/java/.m2/repository/org/apache/mina/mina-parent/2.0.16/mina-parent-2.0.16.pom
 /usr/share/java/.m2/repository/org/apache/mina/mina-parent/2.0.7/mina-parent-2.0.7.pom
 
 %files license
 %defattr(0644,root,root,0755)
+/usr/share/package-licenses/mvn-mina/LICENSE.jzlib.txt
 /usr/share/package-licenses/mvn-mina/LICENSE.ognl.txt
 /usr/share/package-licenses/mvn-mina/LICENSE.slf4j.txt
 /usr/share/package-licenses/mvn-mina/LICENSE.springframework.txt
