@@ -4,7 +4,7 @@
 #
 Name     : mvn-mina
 Version  : 2.0.16
-Release  : 7
+Release  : 8
 URL      : https://github.com/apache/mina/archive/2.0.16.tar.gz
 Source0  : https://github.com/apache/mina/archive/2.0.16.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/apache/mina/build/2.0.0-M2/build-2.0.0-M2.pom
